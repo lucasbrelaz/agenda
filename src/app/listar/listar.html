@@ -1,0 +1,20 @@
+<h1>Contatos</h1>
+<div class="input-group">
+    <input type="text" class="form-control" ng-model="pesquisa" placeholder="Pesquise por nome" autofocus>
+    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+</div>
+<div class="subbox_content listar">
+    <div class="row_contato" ng-repeat="contato in controller.contatos | filter:{nome:pesquisa} | orderBy:'nome'">
+        <div class="col_avatar">
+            <img class="img-circle img_border_tiny" src="{{contato.avatar}}" alt="">
+        </div>
+        <div class="col_details">
+            <div class="nome"><a href="/contatoVer/{{contato.id}}">{{contato.nome}}</a></div>
+            <div class="telefone">{{contato.telefone}}</div>
+        </div>
+        <div class="pull-right acoes">
+            <a tooltip-placement="top" uib-tooltip="Editar" href="/contatoEditar/{{contato.id}}" class="btn btn-xs btn-primary text-center"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a tooltip-placement="top" uib-tooltip="Deletar" href="/contatoDeletar/{{contato.id}}" class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span></a>
+        </div>
+    </div>
+</div>

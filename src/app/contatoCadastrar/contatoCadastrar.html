@@ -1,0 +1,43 @@
+<h1 ng-if="!controller.id">Novo contato</h1>
+<h1 ng-if="controller.id">Editando contato</h1>
+<form ng-submit="controller.salvar()">
+    <div ng-if="controller.id" class="form-group text-center">
+        <img class="img_border img-circle mg-auto" src="{{controller.contato.avatar}}" alt="">
+    </div>
+    <div class="form-group sugestao text-center">
+        <label for="">Sugestão de foto</label>
+        <img ng-click="controller.changePic()" class="img_border img-circle" src="{{controller.randomPic}}" alt="random">
+        <span ng-if="controller.id">/ ou
+            <span class="bold" ng-click="controller.changePicToBkp()">Desfazer</span>
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="nome">Nome <span class="text-danger">*</span></label>
+        <input class="form-control" type="text" id="nome" name="nome" ng-model="controller.contato.nome" required>
+    </div>
+    <div class="form-group">
+        <label for="nome">Nome da Mãe</label>
+        <input class="form-control" type="text" id="nomeMae" name="nomeMae" ng-model="controller.contato.nomeMae">
+    </div>
+    <div class="form-group">
+        <label for="nome">Apelido</label>
+        <input class="form-control" type="text" id="apelido" name="apelido" ng-model="controller.contato.apelido">
+    </div>
+    <div class="form-group">
+        <label for="idade">Idade</label>
+        <input class="form-control" type="text" id="idade" name="idade" ng-model="controller.contato.idade">
+    </div>
+    <div class="form-group">
+        <label for="telefone">Telefone <span class="text-danger">*</span></label>
+        <input class="form-control" type="text" id="telefone" name="telefone" ng-model="controller.contato.telefone" required>
+    </div>
+    <div class="form-group">
+        <label for="avatar">Avatar (URL) <span class="text-danger">*</span></label>
+        <input class="form-control" type="text" id="avatar" name="avatar" ng-model="controller.contato.avatar" required>
+    </div>
+    <div class="form-group">
+        <a href="/listar" type="submit" class="btn btn-default pull-left">Voltar</a>
+        <button ng-if="!controller.id" type="submit" class="btn btn-success pull-right">Cadastrar</button>
+        <button ng-if="controller.id" type="submit" class="btn btn-success pull-right">Atualizar</button>
+    </div>
+</form>
