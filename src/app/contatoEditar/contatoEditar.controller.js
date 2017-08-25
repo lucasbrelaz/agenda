@@ -5,7 +5,7 @@
         .module('generator')
         .controller('ContatoEditarController', ContatoEditarController);
 
-    function ContatoEditarController($timeout, webDevTec, toastr, $http, $window, $state) {
+    function ContatoEditarController($timeout, toastr, $http, $window, $state) {
         var vm = this;
         var urlContatos = 'http://localhost:3000/api/contatos';
         vm.contato  = {};

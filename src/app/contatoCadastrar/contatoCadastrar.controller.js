@@ -5,7 +5,7 @@
         .module('generator')
         .controller('ContatoCadastrarController', ContatoCadastrarController);
 
-    function ContatoCadastrarController($timeout, webDevTec, toastr, $http, $window) {
+    function ContatoCadastrarController($timeout, toastr, $http, $window) {
         var vm = this;
         var urlContatos = 'http://localhost:3000/api/contatos';
         vm.contato = {};

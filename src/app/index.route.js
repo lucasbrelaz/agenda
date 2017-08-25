@@ -7,13 +7,6 @@
 
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-    // $stateProvider
-    //   .state('home', {
-    //     url: '/',
-    //     templateUrl: 'app/main/main.html',
-    //     controller: 'MainController',
-    //     controllerAs: 'main'
-    //   });
 
     $stateProvider
       .state('home', {
@@ -21,6 +14,14 @@
         templateUrl: 'app/listar/listar.html',
         controller: 'ListarController',
         controllerAs: 'controller'
+      });
+
+    $stateProvider
+      .state('documentacao', {
+        url: '/documentacao',
+        templateUrl: 'app/documentacao/documentacao.html',
+        controller: 'DocumentacaoController',
+        controllerAs: 'documentacao'
       });
     
     $stateProvider

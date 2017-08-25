@@ -5,7 +5,7 @@
         .module('generator')
         .controller('ListarController', ListarController);
 
-    function ListarController($scope, $timeout, webDevTec, toastr, $http) {
+    function ListarController($scope, $timeout, toastr, $http) {
         var vm = this;
         var urlContatos = 'http://localhost:3000/api/contatos';
 

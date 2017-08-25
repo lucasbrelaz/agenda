@@ -5,7 +5,7 @@
         .module('generator')
         .controller('ContatoVerController', ContatoVerController);
 
-    function ContatoVerController($timeout, webDevTec, toastr, $http, $state) {
+    function ContatoVerController($timeout, toastr, $http, $state) {
         var vm = this;
         var urlContatos = 'http://localhost:3000/api/contatos';
 

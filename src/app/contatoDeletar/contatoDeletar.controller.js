@@ -7,7 +7,7 @@
 
     // ContatoDeletarController.$inject = [$window];
 
-    function ContatoDeletarController($timeout, webDevTec, toastr, $http, $window, $state) {
+    function ContatoDeletarController($timeout, toastr, $http, $window, $state) {
         var vm = this;
         var urlContatos = 'http://localhost:3000/api/contatos';
         vm.contato  = {};
